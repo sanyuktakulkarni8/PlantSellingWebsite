@@ -9,7 +9,7 @@ exports.createOrderSession = async (req, res, next) => {
         const { cartOrProducts, shippingInfo, pricing } = req.body;
 
         // Generate JWT token with user ID
-        const token = jwt.sign({ userId: userId.toString() }, process.env.SECRET_KEY, { expiresIn: "30m" });
+        const token = jwt.sign({ userId: userId.toString() }, 'Sanyu123', { expiresIn: "30m" });
 
         // Store cart or product information in Redis
         await setData(userId, token, 'cartOrProducts', cartOrProducts, 1800);

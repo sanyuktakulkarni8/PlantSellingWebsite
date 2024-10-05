@@ -4,7 +4,7 @@ const smtpConfig = require('../../config/smtp/smtpConfig');
 const path = require('path');
 const ejs = require('ejs');
 
-const transporter = nodemailer.createTransport(smtpConfig);
+let transporter = nodemailer.createTransport(smtpConfig);
 
 // Verify SMTP connection configuration
 transporter.verify(function (error, success) {

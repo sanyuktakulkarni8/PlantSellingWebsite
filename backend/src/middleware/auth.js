@@ -19,7 +19,7 @@ const auth = async (req, res, next) => {
         };
 
         //? verify the jwt token and return the document id 
-        const verifyUser = jwt.verify(token, process.env.SECRET_KEY);
+        const verifyUser = jwt.verify(token, 'Sanyu123');
 
         //? find the right user from the database 
         const user = await userModel.findOne({ _id: verifyUser._id }).select({ _id: 1, role: 1, isUserVerified: 1 });

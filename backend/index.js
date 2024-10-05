@@ -7,14 +7,14 @@ const cookieParser = require('cookie-parser');
 const fileUpload = require('express-fileupload');
 
 
-const port = process.env.port || 8000;
+const port = 8000;
 const app = express();
 
 // express middleware 
 app.use(cookieParser());
 app.use(cors(
     {
-        origin: process.env.FRONTEND_URL,
+        origin: "http://localhost:3000",
         methods: ['GET', 'POST', 'PATCH', 'DELETE'],
         credentials: true
     }
@@ -70,7 +70,7 @@ const errorHandlerMiddleware = require('./src/middleware/errorMiddleware');
 
 
 app.get('*', (req, res) => {
-    res.status(200).send("Welcome to Plant Selling Website." + "<br />" + "Frontend App: " + `<a href="${process.env.FRONTEND_URL}" target="_blank">${process.env.FRONTEND_URL}</a>`);
+    res.status(200).send("Welcome to Plant Selling Website." + "<br />" + "Frontend App: " + `<a href="http://localhost:3000" target="_blank">"http://localhost:3000"</a>`);
 });
 
 app.use(errorHandlerMiddleware);

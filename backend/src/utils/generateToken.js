@@ -7,7 +7,7 @@ const generateToken = () => {
 
 const generateUniqueLinkWithToken  = (path)  => {
     const token = generateToken();
-    const link = process.env.FRONTEND_URL + '/' + path + '/' + token;
+    const link = 'http://localhost:3000' + '/' + path + '/' + token;
     return {token, link};
 }
 

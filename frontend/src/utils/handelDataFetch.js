@@ -2,7 +2,7 @@ const handelDataFetch = async (path, method, body) => {
     return new Promise(
         async (resolve, rejected) => {
             // attaching the backend api url to frontend
-            const apiUrl = process.env.REACT_APP_API_URL_BACKEND + path;
+            const apiUrl =  "http://localhost:8000" + path;
 
             const res = await fetch(apiUrl, {
                 method,
